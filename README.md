@@ -1,9 +1,11 @@
 # Meta-Prompt for Jina Search Foundation APIs
 
 ## Usage
+
 - `curl docs.jina.ai`: load default version defined in [`default`](default)
 - Specific version: `curl docs.jina.ai/v1`
-- Pipe into [`llm`](https://github.com/simonw/llm):
+- Pipe into [`llm`][llmLink]:
+
 ```bash
 curl docs.jina.ai/v1 | llm -s 'grab all sentences from Hacker News, embed them, and visualize the results in a 2D UMAP with matplotlib' -m claude-3.5-sonnet
 ```
@@ -18,3 +20,6 @@ curl docs.jina.ai/v1 | llm -s 'grab all sentences from Hacker News, embed them, 
   - No need to include `.txt`; simply use `curl docs.jina.ai/v1`, `curl docs.jina.ai/v2`, `curl docs.jina.ai/v3`, etc.
   - [`index.html`](index.html) is the `text/html` response template with placeholder variables inside; this file is only for browser/bot view and for human readability. Eye-candy stuff.
   - [`headers.json`](headers.json) defines some response header that *may be respected* by AI-browsers/apps in the future; one can use `curl -svo. docs.jina.ai` to check them.
+
+
+[llmLink]: https://github.com/simonw/llm
